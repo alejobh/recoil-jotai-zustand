@@ -21,7 +21,6 @@ const Jotai = dynamic(() => import('../../jotai/server/page'), {
 
 const AllServer = () => (
   <PageContainer>
-    <LibHeader name="All" server />
     <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-4">
       <div className="flex flex-col">
         <h2 className="text-center text-3xl font-semibold">State</h2>

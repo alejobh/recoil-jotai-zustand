@@ -3,9 +3,9 @@ import { PageContainer } from '../_components/PageContainer';
 import { Toasts } from '../_components/Toast/Toasts';
 import { useToast as useJotaiToast } from '../jotai/_hooks/useToast';
 import { useToast as useStateToast } from '../state/_hooks/useToast';
-import { useToast as useRecoilToast } from '../recoil/_hooks/useToast';
 
 import { Zustand } from './Zustand';
+import { Recoil } from './Recoil';
 
 const All = () => {
   return (
@@ -13,9 +13,9 @@ const All = () => {
       <LibHeader name="All" />
       <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-4">
         <Toasts title="State" useToast={useStateToast} />
-        <Toasts title="Recoil" useToast={useRecoilToast()} />
-        <Toasts title="Jotai" useToast={useJotaiToast} />
         <Zustand />
+        <Recoil />
+        <Toasts title="Jotai" useToast={useJotaiToast} />
       </div>
     </PageContainer>
   );
