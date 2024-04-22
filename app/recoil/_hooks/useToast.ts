@@ -1,15 +1,19 @@
 'use client';
+
+import { useRef } from 'react';
 import { atom, useRecoilState } from 'recoil';
 
-import { Toast, UseToast } from '@/app/_types/toast';
+import { Toast, } from '@/app/_types/toast';
 
-const toastsAtom = atom<Toast[]>({
-  key: 'toasts',
-  default: [],
-});
+const createToastsAtom = (toasts: Toast[]) =>
+  atom<Toast[]>({
+    key: 'toasts',
+    default: toasts,
+  });
 
-export const useToast: UseToast = () => {
-  const [toasts, setToasts] = useRecoilState(toastsAtom);
+export const useToast = (initial: Toast[] = []) => () => {
+  const toastsAtom = useRef(createToastsAtom(initial));
+  const [toasts, setToasts] = useRecoilState(toastsAtom.current);
 
   const addToast = (toast: Toast) => setToasts([...toasts, toast]);
 

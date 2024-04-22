@@ -8,15 +8,15 @@ const StateServer = async () => {
   const toasts = await getData();
 
   return (
-    <ToastProvider initialToasts={toasts}>
-      <PageContainer>
+    <PageContainer>
         <LibHeader name="State" server />
-        <Toasts useToast={useToastContext} />
+        <ToastProvider initialToasts={toasts}>
+          <Toasts useToast={useToastContext} />
+        </ToastProvider>
       </PageContainer>
-    </ToastProvider>
   );
 };
 
-export const getData = async () => Promise.resolve([jokesMock[0]]);
+const getData = async () => Promise.resolve([jokesMock[0]]);
 
 export default StateServer;

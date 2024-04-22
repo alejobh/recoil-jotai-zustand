@@ -1,5 +1,5 @@
 'use client';
-import { Provider } from 'jotai';
+
 import { useHydrateAtoms } from 'jotai/utils';
 
 import { Toast } from '@/app/_types/toast';
