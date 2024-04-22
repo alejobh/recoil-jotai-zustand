@@ -15,7 +15,7 @@ export const Toasts = ({
 
   return (
     <div className="flex flex-col items-center justify-start">
-      {title && <h3 className="text-semibold mb-3 text-center">{title}</h3>}
+      {title && <h3 className="text-semibold mb-3 text-center text-xl">{title}</h3>}
       <AddToast addToast={addToast} toasts={toasts} />
       <ToastContainer toasts={toasts} closeToast={closeToast} />
     </div>
