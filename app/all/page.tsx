@@ -1,24 +1,20 @@
-import { RecoilRoot } from 'recoil';
 import { LibHeader } from '../_components/LibHeader';
 import { PageContainer } from '../_components/PageContainer';
 import { Toasts } from '../_components/Toast/Toasts';
 import { useToast as useJotaiToast } from '../jotai/_hooks/useToast';
-import { useToast as useRecoilToast } from '../recoil/_hooks/useToast';
 import { useToast as useStateToast } from '../state/_hooks/useToast';
-import { useToast as useZustandToast } from '../zustand/_hooks/useToast';
-import { RecoilWrapper } from '../recoil/_components/RecoilWrapper';
+import { RecoilServer } from './RecoilServer';
+import { ZustandServer } from './ZustandServer';
 
 const All = () => {
   return (
     <PageContainer>
       <LibHeader name="All" />
-      <div className="flex gap-x-3">
+      <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-4">
         <Toasts title="State" useToast={useStateToast} />
+        <RecoilServer />
         <Toasts title="Jotai" useToast={useJotaiToast} />
-        <RecoilWrapper>
-          <Toasts title="Recoil" useToast={useRecoilToast} />
-        </RecoilWrapper>
-        <Toasts title="Zustand" useToast={useZustandToast} />
+        <ZustandServer />
       </div>
     </PageContainer>
   );
