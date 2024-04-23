@@ -25,7 +25,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold text-center text-sky-400 mb-2">
           Client side
         </h2>
-        <div className="grid text-center lg:max-w-5xl lg:w-full lg:grid-cols-5 lg:text-center">
+        <div className="grid text-center lg:max-w-5xl lg:w-full lg:grid-cols-6 lg:text-center">
           <Link
             href="/state"
             className="group items-center justify-center rounded-lg border border-transparent px-5 py-1 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 px-4"
@@ -75,6 +75,18 @@ export default function Home() {
           </Link>
 
           <Link
+            href="/valtio"
+            className="group items-center justify-center rounded-lg border border-transparent px-5 py-1 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 px-4"
+          >
+            <h2 className={`mb-3 text-2xl font-semibold text-center`}>
+              Valtio{' '}
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+          </Link>
+
+          <Link
             href="/all"
             className="group items-center justify-center rounded-lg border border-transparent px-5 py-1 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 px-4"
           >
@@ -92,7 +104,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold text-center text-sky-400 mb-2">
           Server side
         </h2>
-        <div className="grid text-center lg:max-w-5xl lg:w-full lg:grid-cols-5 lg:text-center">
+        <div className="grid text-center lg:max-w-5xl lg:w-full lg:grid-cols-6 lg:text-center">
           <a
             href="/state/server"
             className="group items-center justify-center rounded-lg border border-transparent px-5 py-1 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 px-4"
@@ -135,6 +147,18 @@ export default function Home() {
           >
             <h2 className={`mb-3 text-2xl font-semibold text-center`}>
               Jotai{' '}
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+          </a>
+
+          <a
+            href="/valtio/server"
+            className="group items-center justify-center rounded-lg border border-transparent px-5 py-1 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30 px-4"
+          >
+            <h2 className={`mb-3 text-2xl font-semibold text-center`}>
+              Valtio{' '}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>

@@ -19,6 +19,10 @@ const Jotai = dynamic(() => import('../../jotai/server/page'), {
   loading: () => <Loading text="Jotai" />,
 });
 
+const Valtio = dynamic(() => import('../../valtio/server/page'), {
+  loading: () => <Loading text="Valtio" />,
+});
+
 const AllServer = () => (
   <PageContainer>
     <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-4">
@@ -37,6 +41,10 @@ const AllServer = () => (
       <div className="flex flex-col">
         <h2 className="text-center text-3xl font-semibold">Jotai</h2>
         <Jotai />
+      </div>
+      <div className="flex flex-col">
+        <h2 className="text-center text-3xl font-semibold">Valtio</h2>
+        <Valtio />
       </div>
     </div>
     <LibHeader name="All" server />

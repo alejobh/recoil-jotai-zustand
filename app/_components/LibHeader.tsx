@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 interface LibHeaderProps {
-  name: 'Zustand' | 'Recoil' | 'Jotai' | 'State' | 'All';
+  name: 'Zustand' | 'Recoil' | 'Jotai' | 'State' | 'Valtio' | 'All';
   server?: boolean;
 }
 

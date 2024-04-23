@@ -6,6 +6,7 @@ import { useToast as useStateToast } from '../state/_hooks/useToast';
 
 import { Zustand } from './Zustand';
 import { Recoil } from './Recoil';
+import { Valtio } from './Valtio';
 
 const All = () => {
   return (
@@ -16,6 +17,7 @@ const All = () => {
         <Zustand />
         <Recoil />
         <Toasts title="Jotai" useToast={useJotaiToast} />
+        <Valtio />
       </div>
     </PageContainer>
   );
