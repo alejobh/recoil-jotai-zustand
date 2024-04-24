@@ -14,13 +14,15 @@ const getRandomJoke = () => {
 export const AddToast = ({ addToast, toasts }: AddToastProps) => {
   const onAdd = () => {
     let added = false;
-    while (!added) {
+    let count = 0;
+    while (!added && count < jokesMock.length) {
       const currentJk = getRandomJoke();
       const find = toasts.some((jk) => jk.id === currentJk.id);
       if (!find) {
         added = true;
         addToast(currentJk);
       }
+      count++
     }
   };
 
