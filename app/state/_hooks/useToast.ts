@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Toast, UseToast } from '@/app/_types/toast';
+import { getEven } from '@/app/_utils/utils';
 
 export const useToast: UseToast = () => {
   const [toasts, setToasts] = useState<Toast[]>([]);
@@ -14,5 +15,5 @@ export const useToast: UseToast = () => {
 
   const addToast = (toast: Toast) => setToasts([...toasts, toast]);
 
-  return { toasts, closeToast, addToast };
+  return { toasts, closeToast, addToast, even: getEven(toasts.length) };
 };

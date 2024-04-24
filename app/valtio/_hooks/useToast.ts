@@ -3,6 +3,7 @@
 import { proxy, useSnapshot } from 'valtio';
 
 import { Toast, UseToastReturn } from '@/app/_types/toast';
+import { getEven } from '@/app/_utils/utils';
 
 const state = proxy<UseToastReturn>({
   toasts: [], 
@@ -12,6 +13,9 @@ const state = proxy<UseToastReturn>({
   closeToast: (id: string) =>{
     state.toasts = state.toasts.filter((toast) => toast.id !== id);
   },
+  get even() {
+    return getEven(this.toasts.length)
+  }
 });
 
 export const useToast = (initial: Toast[] = []) => {
@@ -26,6 +30,7 @@ export const useToast = (initial: Toast[] = []) => {
       toasts: toastState.toasts,
       closeToast: toastState.closeToast,
       addToast: toastState.addToast,
+      even: toastState.even,
     } as UseToastReturn
   }
 
